@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- <div class="container container-border"> -->
+  <!-- <div class="container-fluid"> -->
+  <div class="container main-content">
+    <div class="card">
+      <div class="card-body">
+        <div class="jumbotron text-center">
+        <h1><strong>Mission to Mars</strong></h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+          
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2><strong>Latest Mars News</strong></h2>
+              <p>
+                <h4><strong>{{mars_updates.news_title}}</strong></h4>
+                {{mars_updates.news_paragraph}}      
+              </p>
+            </div>
+          </div>
+        </div>
+
+    
+    <!-- Call dictionary keys -->
+    <h2><strong>Latest Mars News</strong></h2>
+    <p>
+      <h4><strong>{{mars_updates.news_title}}</strong></h4>
+      {{mars_updates.news_paragraph}}      
+    </p>    
+    
+    <h2><strong>Featured Image Mars</strong></h2>
+    <p><img src="{{mars_updates.featured_image}}" alt="Featured Image"></p>  
+    
+
+    <h2><strong>Mars Facts</strong></h2>
+    <table>{{mars_updates.fact_table|safe}}</table>
+
+    <h2><strong>Mars Hemispheres </strong> </h2>
+    <h3>{{mars_updates.hemispheres[0]["Title"]}}</h3> 
+    <p><img src ="{{mars_updates.hemispheres[0]["Image_URL"]}}"></p> 
+
+    <h3>{{mars_updates.hemispheres[1]["Title"]}}</h3> 
+    <p><img src ="{{mars_updates.hemispheres[1]["Image_URL"]}}"></p> 
+
+    <h3>{{mars_updates.hemispheres[2]["Title"]}}</h3> 
+    <p><img src ="{{mars_updates.hemispheres[2]["Image_URL"]}}"></p> 
+
+    <h3>{{mars_updates.hemispheres[3]["Title"]}}</h3> 
+    <p><img src ="{{mars_updates.hemispheres[3]["Image_URL"]}}"></p> 
+  </div>
+  </div>
+</body>
+
+</html>
