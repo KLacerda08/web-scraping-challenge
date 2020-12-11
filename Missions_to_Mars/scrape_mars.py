@@ -1,12 +1,12 @@
 
 # Dependencies
-# import os
+import os
 from bs4 import BeautifulSoup as bs
-# import requests
 import pymongo
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 import time 
+import pandas as pd
 
 # ## Step 1 - Scraping
 
@@ -69,9 +69,7 @@ def scrape_info():
     browser.visit(url_facts)
     time.sleep(1)
 
-    # Use Pandas to scrape the table containing facts about the planet. First import dependency
-    import pandas as pd
-
+    # Use Pandas to scrape the table containing facts about the planet. 
     #read table
     table = pd.read_html(url_facts)
  
@@ -88,8 +86,6 @@ def scrape_info():
     # remove new lines /carriage returns
     planet_table_html = planet_table_html.replace('\n', '')
 
-    # # export table to html 
-    # planet_df.to_html2('table.html', index=False)
 # ---------- Mars Hemispheres ----------
 
     # Assign variable for url https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars 

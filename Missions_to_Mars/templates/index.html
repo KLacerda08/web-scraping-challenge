@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        .small-image1 {
+            width: 100%;
+            padding: 0px;
+        }
+
+        .small-image {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .centered {
+            text-align: center !important;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .border1 {
+            border-style: solid;
+            border-width: 1px;
+            border-color: lightgrey;
+        }
+
+        .title-indent {
+            padding-left: 10px;
+        }
+
+        .padding-lft {
+            padding-left: 50px;
+        }
+
+        .padding-rt {
+            padding-right: 50px;
+        }
+
+        .padding-bt {
+            padding-bottom: 30px;
+        }
+
+        .padding-mars {
+            padding-right: 50px;
+            padding-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container border1">
+        <div class="container container-border padding-mars">
+            <div class="jumbotron text-center">
+                <h1 class="bold">Mission to Mars</h1>
+                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+            </div>
+        </div>
+        <div class="container container-border">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="bold">Latest Mars News</h2>
+                    <p>
+                    <h4 class="bold">{{mars_updates.news_title}}</h4>
+                    {{mars_updates.news_paragraph}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="padding-left: 15px">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title bold">Featured Image Mars</h2>
+                                <p><img src="{{mars_updates.featured_image}}" alt="Featured Image" class="small-image1">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title bold">Mars Facts</h2>
+                                <table>{{mars_updates.fact_table|safe}}</table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body padding-rt padding-lft padding-bt">
+                <h2 class="card-title centered bold">Mars Hemispheres</h2>
+                <!-- Subrow 1 -->
+                <div class="row padding-bt">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body border1">
+                                <p><img src="{{mars_updates.hemispheres[0]["Image_URL"]}}" class="small-image">
+                                </p>
+                                <h3 class="card-title bold title-indent">
+                                    {{mars_updates.hemispheres[0]["Title"]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body border1">
+                                <p><img src="{{mars_updates.hemispheres[1]["Image_URL"]}}" class="small-image">
+                                </p>
+                                <h3 class="card-title bold title-indent">
+                                    {{mars_updates.hemispheres[1]["Title"]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Subrow 2 -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body border1">
+                                <p><img src="{{mars_updates.hemispheres[2]["Image_URL"]}}" class="small-image">
+                                </p>
+                                <h3 class="card-title bold title-indent">
+                                    {{mars_updates.hemispheres[2]["Title"]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body border1">
+                                <p><img src="{{mars_updates.hemispheres[3]["Image_URL"]}}" class="small-image">
+                                </p>
+                                <h3 class="card-title bold title-indent">
+                                    {{mars_updates.hemispheres[3]["Title"]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
