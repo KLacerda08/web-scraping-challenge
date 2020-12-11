@@ -45,8 +45,8 @@ the functions to create the interactive website are coded. The data was stored i
 The website was rendered using the html template, with supplemental custome styling, here: 
 https://github.com/KLacerda08/web-scraping-challenge/tree/main/Missions_to_Mars/templates/index.html
 
-The website can be activated in your python environment by running app.py at the following, and clicking on 
-theScrape New Data! button. https://github.com/KLacerda08/web-scraping-challenge/tree/main/Missions_to_Mars/app.py
+To access the website, in your python environment, run app.py at the following link, and clicking on the 
+Scrape New Data! button. https://github.com/KLacerda08/web-scraping-challenge/tree/main/Missions_to_Mars/app.py
  
 Images of the site after running the app are shown below:
 
